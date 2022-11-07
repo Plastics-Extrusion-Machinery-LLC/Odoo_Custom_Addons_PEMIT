@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_mrp_work_order_template">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <div class="page">
+                    <t t-foreach="docs" t-as="mo">
+                        <div style="page-break-inside: avoid;">
+                            <div class="row mt-4">
+                                <div class="col-7">
+                                    <strong style="font-size: 24px; font-weight:bold;vertical-align: bottom;">
+                                        <t t-if="mo.project_id.sequence_name"><span t-field="mo.project_id.sequence_name"/> - </t><span t-field="mo.name"/>
+                                    </strong>
+                                </div>
+                                <div class="col-5">
+                                    <span class="text-right">
+                                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', mo.name, 350, 40)"
+                                        style="width:350px;height:40px" alt="Barcode"/>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row mt-1 mb-2">
+                                <div class="col-8">
+                                    <strong style="font-size: 18px; font-weight:bold">Product:</strong>
+                                    <span t-if="mo.product_id" t-field="mo.product_id.name"/>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <strong style="font-size: 18px; font-weight:bold">QTY:</strong>
+                                    <span t-field="mo.product_qty"/>
+                                </div>
+                            </div>
+                            <div class="row mt-2 mb-4" t-if="mo.workorder_ids">
+                                <div class="col-12">
+                                    <table id="manufacturing_order_ids" name="manufacturing_order_table"
+                                            style="font-size: 14px;border: 1px solid black;width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th name="th_item"
+                                                    style="vertical-align: bottom;border: 1px solid black;padding:2px;">
+                                                    <strong>Work Order</strong>
+                                                </th>
+                                                <th name="th_item"
+                                                    style="vertical-align: bottom;border: 1px solid black;padding:2px;">
+                                                    <strong>Work Center</strong>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr t-foreach="mo.workorder_ids" t-as="wo">
+                                                <td style="border: 1px solid black;text-align: left;padding:2px;">
+                                                    <span t-field="wo.name"/>
+                                                </td>
+                                                <td style="border: 1px solid black;text-align: left;padding:2px;">
+                                                    <span t-if="wo.workcenter_id" t-field="wo.workcenter_id.name"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                    <div class="footer" style="text-align:center !important;">
+                        <hr style="border-top: 1px solid;"/>
+                        <div class="text-right">
+                            Page
+                            <span class="page"/>
+                            of
+                            <span class="topage"/>
+                        </div>
+                    </div>
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
