@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="label_pull_bin_tag_view_zpl">
+            <t t-foreach="docs" t-as="doc">
+^XA
+^PW730
+^LS0
+^MD5
+
+^FX ===Default Font===
+^CF0,40,30
+
+^FX ===Job and Mfg Order===
+
+^FO15,20^FD <t t-if="doc.project_id"><t t-esc="doc.project_id.sequence_name"/></t>^FS
+^FO550,20^FD <t t-esc="doc.name"/>^FS
+
+^FX ===Machine===
+
+^FO15,80^FD Machine: <t t-raw="doc.project_id.sale_line_id.product_id.name"/>^FS
+^FO135,120^GB1000,2,2^FS
+
+^FX ===ASM#===
+
+^FO270,20^FD ASM#: <t t-esc="doc.product_id.default_code"/>^FS
+
+ 
+^FX===ASM Name===
+^FO15,140^FD ASM Name: <t t-raw="doc.product_id.name"/>^FS
+^FO170,180^GB1000,2,2^FS
+^XZ
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -23,6 +23,8 @@
         'report/mrp_work_order_templates.xml',
         'report/report_paper_format.xml',
         'report/product_product.xml',
+        'report/pallet_tag_view.xml',
+        'report/pull_bin_tag_view.xml',
         'report/report.xml',
     ],
     "installable": True,
