@@ -12,27 +12,27 @@
 ^CF0,40,30
 
 ^FX ===Job and Mfg Order===
-^CF0,80,70
+^CFV,190,75
 
-^FO38,20^FD <t t-if="doc.project_id"><t t-esc="doc.project_id.sequence_name"/></t>^FS
-^FO38,90^GB330,2,2^FS
-^FO380,20^FD <t t-esc="doc.name"/>^FS
-^FO400,90^GB330,2,2^FS
+^FO10,50^FD <t t-if="doc.project_id"><t t-esc="doc.project_id.sequence_name"/></t>^FS
+^FO10,210^GB360,4,2^FS
+^FO370,50^FD <t t-esc="doc.name"/>^FS
+^FO390,210^GB350,4,2^FS
 
 ^FX ===Machine===
 ^CF0,40,30
 
-^FO38,115^FD Machine: <t t-raw="doc.project_id.sale_line_id.product_id.name"/>^FS
-^FO165,165^GB1000,2,2^FS
+^FO38,240^FD Machine: <t t-raw="doc.project_id.sale_line_id.product_id.name"/>^FS
+^FO165,280^GB1000,2,2^FS
 
 ^FX ===ASM#===
 
-^FO38,200^FD ASM#: <t t-esc="doc.product_id.default_code"/>^FS
-^FO130,250^GB130,2,2^FS
+^FO38,295^FD ASM#: <t t-esc="doc.product_id.default_code"/>^FS
+^FO130,330^GB130,2,2^FS
  
 ^FX ===ASM Name===
-^FO38,300^FD ASM Name: <t t-raw="doc.product_id.name"/>^FS
-^FO200,350^GB1000,2,2^FS
+^FO38,350^FD ASM Name: <t t-raw="doc.product_id.name"/>^FS
+^FO200,390^GB1000,2,2^FS
 ^XZ
             </t>
         </template>
