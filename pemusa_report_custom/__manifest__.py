@@ -20,6 +20,7 @@
         'stock',
     ],
     "data": [
+        'report/label_part_tag_zpl_view.xml',
         'report/mrp_work_order_templates.xml',
         'report/report_paper_format.xml',
         'report/product_product.xml',

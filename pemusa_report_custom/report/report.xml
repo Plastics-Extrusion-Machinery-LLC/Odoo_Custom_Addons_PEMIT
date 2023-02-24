@@ -32,5 +32,14 @@
             <field name="binding_model_id" ref="mrp.model_mrp_production"/>
             <field name="binding_type">report</field>
         </record>
+        <record id="action_report_part_tag_label_zpl" model="ir.actions.report">
+            <field name="name">Part Tag Label (ZPL)</field>
+            <field name="model">quality.check</field>
+            <field name="report_type">qweb-text</field>
+            <field name="report_name">pemusa_report_custom.label_part_tag_zpl_view</field>
+            <field name="report_file">pemusa_report_custom.label_part_tag_zpl_view</field>
+            <field name="binding_model_id" ref="quality_control.model_quality_check"/>
+            <field name="binding_type">report</field>
+        </record>
     </data>
 </odoo>
