@@ -20,6 +20,9 @@
 ^FX ===Pkg Qty and Length and UOM===
 ^FO110,100^FD<t t-if="doc.product_packaging"><t t-raw="doc.required_qty"/> @ <t t-raw="doc.product_packaging.qty"/></t><t t-else=""><t t-raw="doc.product_qty"/></t> <t t-if="doc.product_uom_id"><t t-esc="doc.product_uom_id.name"/></t>^FS
 
+^FX ===Route===
+<t t-if="doc.mo_component_note">^FO450,100^FDROUTE: <t t-esc="doc.mo_component_note"/></t>^FS
+
 ^FX ===JOB and MO===
 ^FO110,170^FD<t t-if="doc.project_id"><t t-raw="doc.project_id.sequence_name"/>  </t><t t-if="doc.production_id"><t t-esc="doc.production_id.name"/></t>^FS
 
