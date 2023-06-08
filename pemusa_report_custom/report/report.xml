@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_mrp_work_order" model="ir.actions.report">
+            <field name="name">MRP Work Order Report</field>
+            <field name="model">mrp.production</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">pemusa_report_custom.report_mrp_work_order_template</field>
+	    <field name="report_file">pemusa_report_custom.report_mrp_work_order_templates</field>
+            <field name="print_report_name">'MRP Work Order Report'</field>
+	    <field name="paperformat_id" ref="pemusa_report_custom.paperformat_mrp_work_order_report"/>
+            <field name="binding_model_id" ref="mrp.model_mrp_production"/>
+	    <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_pallet_tag_zpl" model="ir.actions.report">
+            <field name="name">Pallet Tag (ZPL)</field>
+            <field name="model">mrp.production</field>
+            <field name="report_type">qweb-text</field>
+            <field name="report_name">pemusa_report_custom.label_pallet_tag_view_zpl</field>
+            <field name="report_file">pemusa_report_custom.pallet_tag_view</field>
+            <field name="print_report_name">'Pallet Tag ZPL'</field>
+            <field name="binding_model_id" ref="mrp.model_mrp_production"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_pull_bin_tag" model="ir.actions.report">
+            <field name="name">Pull Bin Tag (ZPL)</field>
+            <field name="model">mrp.production</field>
+            <field name="report_type">qweb-text</field>
+            <field name="report_name">pemusa_report_custom.label_pull_bin_tag_view_zpl</field>
+            <field name="report_file">pemusa_report_custom.pull_bin_tag_view</field>
+            <field name="print_report_name">'Pull Bin Tag ZPL'</field>
+            <field name="binding_model_id" ref="mrp.model_mrp_production"/>
+            <field name="binding_type">report</field>
+        </record>
+        <record id="action_report_part_tag_label_zpl" model="ir.actions.report">
+            <field name="name">Part Tag Label (ZPL)</field>
+            <field name="model">quality.check</field>
+            <field name="report_type">qweb-text</field>
+            <field name="report_name">pemusa_report_custom.label_part_tag_zpl_view</field>
+            <field name="report_file">pemusa_report_custom.label_part_tag_zpl_view</field>
+            <field name="binding_model_id" ref="quality_control.model_quality_check"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="label_barcode_product_product_view_inherit_pem" inherit_id="stock.label_barcode_product_product_view">
+            <xpath expr="//t[@t-foreach='docs']" position="replace">
+                <t t-foreach="docs" t-as="product">
+                    <t t-translation="off">
+^XA
+^FO30,50
+^A0N,60,30^FD<t t-raw="product.name"/>^FS
+^FO30,130
+^A0N,55,35^FD<t t-esc="product.default_code"/>^FS
+<t t-if="product.barcode ">
+^FO300,100^B3
+^BCN,60,Y,N,N
+^FD<t t-esc="product.barcode"/>^FS
+                      </t>
+^XZ
+                    </t>
+                  </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>
